@@ -1,0 +1,32 @@
+{
+  "name": "tidal-launcher",
+  "version": "1.0.0",
+  "description": "Tidal Launcher - fan-made OG Fortnite Chapter 2 Season 3 launcher",
+  "main": "src/main.js",
+  "author": "Tidal Launcher",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.tidal.launcher",
+    "productName": "Tidal Launcher",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "config/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
