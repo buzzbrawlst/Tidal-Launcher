@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1.0"
+>
+
+<title>Tidal Launcher</title>
+
+<link
+rel="stylesheet"
+href="styles.css"
+>
+
+</head>
+
+<body>
+
+<div id="cursor"></div>
+
+<header class="titlebar">
+
+    <div class="brand">
+
+        <img
+        id="brandLogo"
+        src="../assets/tidal-logo.svg"
+        >
+
+        <span>
+            Tidal Launcher
+        </span>
+
+    </div>
+
+    <div class="window-buttons">
+
+        <button id="min">
+            —
+        </button>
+
+        <button id="max">
+            □
+        </button>
+
+        <button id="close">
+            ×
+        </button>
+
+    </div>
+
+</header>
+
+
+<div class="water-wrap">
+
+    <canvas id="water"></canvas>
+
+    <div class="shade"></div>
+
+</div>
+
+
+<main class="shell">
+
+
+<aside class="sidebar glass">
+
+    <div class="side-logo">
+
+        <img
+        id="sideLogo"
+        src="../assets/tidal-logo.svg"
+        >
+
+    </div>
+
+
+    <button
+    class="nav active"
+    data-page="home"
+    >
+
+        <span>⌂</span>
+        <span>Home</span>
+
+    </button>
+
+
+    <button
+    class="nav"
+    data-page="install"
+    >
+
+        <span>⇩</span>
+        <span>Installation</span>
+
+    </button>
+
+
+    <button
+    class="nav"
+    data-page="settings"
+    >
+
+        <span>⚙</span>
+        <span>Settings</span>
+
+    </button>
+
+
+    <button
+    class="nav"
+    data-page="about"
+    >
+
+        <span>ⓘ</span>
+        <span>About</span>
+
+    </button>
+
+
+    <div class="side-bottom">
+
+        TIDAL
+
+        <br>
+
+        <small>
+            OGFN PROJECT
+        </small>
+
+    </div>
+
+</aside>
+
+
+<section class="content">
+
+
+<!-- HOME -->
+
+<div
+id="home"
+class="page active"
+>
+
+    <div class="hero glass">
+
+        <div>
+
+            <span class="eyebrow">
+                OG FORTNITE PROJECT
+            </span>
+
+            <h1>
+                Tidal Launcher
+            </h1>
+
+            <p>
+                Launch the Water Season experience
+                from one clean, simple launcher.
+            </p>
+
+            <div class="status-row">
+
+                <span class="dot"></span>
+
+                <span id="status">
+                    Checking installation…
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <img
+        class="hero-logo"
+        src="../assets/tidal-logo.svg"
+        >
+
+    </div>
+
+
+    <div class="cards">
+
+
+        <div class="glass game-card">
+
+
+            <div class="game-art">
+
+                <div class="water-word">
+
+                    WATER
+
+                    <br>
+
+                    <span>
+                        SEASON
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="game-info">
+
+
+                <div>
+
+                    <span class="eyebrow">
+                        CURRENT BUILD
+                    </span>
+
+                    <h2 id="gameName">
+                        OG Fortnite Chapter 2 Season 3
+                    </h2>
+
+                    <p id="version">
+                        Version 1.0.0
+                    </p>
+
+                </div>
+
+
+                <div class="actions">
+
+                    <button
+                    id="installBtn"
+                    class="primary"
+                    >
+                        INSTALL
+                    </button>
+
+                    <button
+                    id="launchBtn"
+                    class="secondary"
+                    disabled
+                    >
+                        LAUNCH
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="glass progress-card">
+
+            <div class="progress-head">
+
+                <span id="progressFile">
+                    Ready
+                </span>
+
+                <span id="progressText">
+                    0%
+                </span>
+
+            </div>
+
+
+            <div class="bar">
+
+                <div id="progressBar"></div>
+
+            </div>
+
+
+            <p id="progressMeta">
+                Choose INSTALL to begin.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- INSTALLATION -->
+
+<div
+id="install"
+class="page"
+>
+
+    <div class="glass panel">
+
+        <span class="eyebrow">
+            INSTALLATION
+        </span>
+
+        <h1>
+            Game files
+        </h1>
+
+        <p>
+            Choose where Tidal Launcher
+            should store the game files.
+        </p>
+
+
+        <div class="path-box">
+
+            <span id="path">
+                Loading…
+            </span>
+
+            <button id="choose">
+                CHANGE
+            </button>
+
+        </div>
+
+
+        <div class="actions">
+
+            <button
+            id="installBtn2"
+            class="primary"
+            >
+                INSTALL / REPAIR
+            </button>
+
+            <button
+            id="open"
+            class="secondary"
+            >
+                OPEN FOLDER
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- SETTINGS -->
+
+<div
+id="settings"
+class="page"
+>
+
+    <div class="glass panel">
+
+        <span class="eyebrow">
+            SETTINGS
+        </span>
+
+        <h1>
+            Launcher settings
+        </h1>
+
+
+        <label>
+            Installation directory
+        </label>
+
+
+        <div class="path-box">
+
+            <span id="settingsPath">
+                Loading…
+            </span>
+
+            <button id="choose2">
+                CHANGE
+            </button>
+
+        </div>
+
+
+        <p class="muted">
+
+            Download sources and game launch
+            arguments are configured in
+
+            <code>
+                config/config.json
+            </code>
+
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- ABOUT -->
+
+<div
+id="about"
+class="page"
+>
+
+    <div class="glass panel about">
+
+        <img
+        src="../assets/tidal-logo.svg"
+        >
+
+        <span class="eyebrow">
+            ABOUT
+        </span>
+
+        <h1>
+            Tidal Launcher
+        </h1>
+
+        <p>
+            A launcher for Project Tidal, an OG
+            Fortnite Chapter 2 Season 3 project.
+        </p>
+
+        <p class="muted">
+
+            Tidal Launcher is independent
+            and is not affiliated with or
+            endorsed by Epic Games.
+
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<div id="toast"></div>
+
+
+<script src="renderer.js"></script>
+
+</body>
+
+</html>
