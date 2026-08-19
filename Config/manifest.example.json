@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "path": "Example/file.bin",
+      "url": "https://example.com/file.bin",
+      "size": 123456,
+      "sha256": "replace-with-real-sha256"
+    }
+  ]
+}
