@@ -1,0 +1,1110 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #041b2c;
+
+    color: white;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+button {
+
+    font: inherit;
+
+    color: inherit;
+
+    border: 0;
+
+    cursor: pointer;
+
+}
+
+
+/* TITLE BAR */
+
+.titlebar {
+
+    height: 38px;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 20;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    padding-left: 14px;
+
+    background:
+        rgba(3,18,30,.35);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-app-region:
+        drag;
+
+}
+
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.brand img {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.brand span {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    opacity: .8;
+
+}
+
+
+.window-buttons {
+
+    height: 100%;
+
+    display: flex;
+
+    -webkit-app-region:
+        no-drag;
+
+}
+
+
+.window-buttons button {
+
+    width: 44px;
+
+    height: 100%;
+
+    background: transparent;
+
+    color: #dcefff;
+
+}
+
+
+.window-buttons button:hover {
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+#close:hover {
+
+    background:
+        #e54848;
+
+}
+
+
+/* WATER */
+
+.water-wrap {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 0;
+
+}
+
+
+#water {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+}
+
+
+.shade {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(255,255,255,.07),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0,20,45,.05),
+            rgba(0,15,35,.24)
+        );
+
+}
+
+
+/* GLASS */
+
+.glass {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.14),
+            rgba(255,255,255,.055)
+        );
+
+    border:
+
+        1px solid
+        rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0,20,50,.3),
+
+        inset 0 1px
+        rgba(255,255,255,.18);
+
+    backdrop-filter:
+        blur(25px)
+        saturate(140%);
+
+    -webkit-backdrop-filter:
+        blur(25px)
+        saturate(140%);
+
+}
+
+
+/* LAYOUT */
+
+.shell {
+
+    position: relative;
+
+    z-index: 5;
+
+    height: 100%;
+
+    padding:
+        68px
+        28px
+        28px;
+
+    display: flex;
+
+    gap: 18px;
+
+}
+
+
+.sidebar {
+
+    width: 210px;
+
+    border-radius: 26px;
+
+    padding: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.side-logo {
+
+    padding:
+        10px
+        8px
+        22px;
+
+}
+
+
+.side-logo img {
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 14px;
+
+}
+
+
+.nav {
+
+    padding:
+        12px
+        14px;
+
+    border-radius: 13px;
+
+    background: transparent;
+
+    text-align: left;
+
+    display: flex;
+
+    gap: 12px;
+
+    align-items: center;
+
+    color:
+        rgba(255,255,255,.62);
+
+    transition:
+        .2s;
+
+}
+
+
+.nav:hover,
+.nav.active {
+
+    background:
+        rgba(255,255,255,.12);
+
+    color: white;
+
+}
+
+
+.side-bottom {
+
+    margin-top: auto;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color:
+        rgba(255,255,255,.35);
+
+    padding: 10px;
+
+}
+
+
+.side-bottom small {
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* CONTENT */
+
+.content {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+.page {
+
+    display: none;
+
+    height: 100%;
+
+    overflow: auto;
+
+}
+
+
+.page.active {
+
+    display: block;
+
+}
+
+
+/* HERO */
+
+.hero {
+
+    min-height: 210px;
+
+    border-radius: 28px;
+
+    padding:
+        34px
+        38px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    animation:
+        intro .5s ease;
+
+}
+
+
+.eyebrow {
+
+    font-size: 10px;
+
+    letter-spacing: 1.7px;
+
+    font-weight: 800;
+
+    color:
+        rgba(255,255,255,.52);
+
+}
+
+
+h1 {
+
+    font-size: 42px;
+
+    letter-spacing: -1.8px;
+
+    margin:
+        8px
+        0;
+
+}
+
+
+h2 {
+
+    font-size: 20px;
+
+    margin:
+        5px
+        0;
+
+}
+
+
+p {
+
+    color:
+        rgba(255,255,255,.65);
+
+    line-height: 1.55;
+
+    margin:
+        8px
+        0;
+
+}
+
+
+.hero-logo {
+
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(0,0,0,.22)
+        );
+
+}
+
+
+.status-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color:
+        rgba(255,255,255,.62);
+
+}
+
+
+.dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    background: #65e3ad;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px
+        #65e3ad;
+
+}
+
+
+/* GAME */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap: 14px;
+
+    margin-top: 14px;
+
+}
+
+
+.game-card {
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+}
+
+
+.game-art {
+
+    height: 210px;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 20%,
+            rgba(170,240,255,.25),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #0a77b7,
+            #064270 60%,
+            #021d35
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 32px;
+
+}
+
+
+.water-word {
+
+    font-size: 54px;
+
+    font-weight: 900;
+
+    line-height: .8;
+
+    letter-spacing: -3px;
+
+    text-shadow:
+        0 10px 35px
+        rgba(0,0,0,.25);
+
+}
+
+
+.water-word span {
+
+    font-size: 27px;
+
+    letter-spacing: 5px;
+
+}
+
+
+.game-info {
+
+    padding:
+        24px
+        26px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 20px;
+
+    align-items: end;
+
+}
+
+
+/* BUTTONS */
+
+.actions {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+
+.primary,
+.secondary {
+
+    padding:
+        12px
+        18px;
+
+    border-radius: 12px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: .7px;
+
+    transition:
+        .2s;
+
+}
+
+
+.primary {
+
+    background: white;
+
+    color: #075384;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18);
+
+}
+
+
+.secondary {
+
+    background:
+        rgba(255,255,255,.1);
+
+    border:
+        1px solid
+        rgba(255,255,255,.13);
+
+}
+
+
+.primary:hover,
+.secondary:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.06);
+
+}
+
+
+button:disabled {
+
+    opacity: .4;
+
+    cursor:
+        not-allowed;
+
+}
+
+
+/* PROGRESS */
+
+.progress-card {
+
+    padding:
+        20px
+        24px;
+
+    border-radius: 20px;
+
+}
+
+
+.progress-head {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,.65);
+
+}
+
+
+.bar {
+
+    height: 6px;
+
+    background:
+        rgba(0,0,0,.2);
+
+    border-radius: 99px;
+
+    margin:
+        12px
+        0;
+
+    overflow: hidden;
+
+}
+
+
+.bar div {
+
+    height: 100%;
+
+    width: 0;
+
+    background: white;
+
+    border-radius: 99px;
+
+    transition:
+        width .15s;
+
+}
+
+
+.progress-card p {
+
+    font-size: 11px;
+
+    margin: 0;
+
+}
+
+
+/* PANELS */
+
+.panel {
+
+    padding: 35px;
+
+    border-radius: 26px;
+
+    max-width: 800px;
+
+}
+
+
+.path-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin:
+        22px
+        0;
+
+    padding:
+        12px
+        12px
+        12px
+        16px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(0,0,0,.16);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
+
+}
+
+
+.path-box span {
+
+    flex: 1;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    font-size: 12px;
+
+    color:
+        rgba(255,255,255,.65);
+
+}
+
+
+.path-box button {
+
+    background:
+        rgba(255,255,255,.12);
+
+    padding:
+        9px
+        12px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+.panel label {
+
+    display: block;
+
+    font-size: 11px;
+
+    color:
+        rgba(255,255,255,.5);
+
+    margin-top: 22px;
+
+}
+
+
+.muted {
+
+    font-size: 12px;
+
+    color:
+        rgba(255,255,255,.4);
+
+}
+
+
+code {
+
+    color:
+        #bcefff;
+
+}
+
+
+/* ABOUT */
+
+.about {
+
+    text-align: center;
+
+    margin: auto;
+
+}
+
+
+.about img {
+
+    width: 80px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.about p {
+
+    max-width: 600px;
+
+    margin:
+        12px
+        auto;
+
+}
+
+
+/* TOAST */
+
+#toast {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 50;
+
+    padding:
+        13px
+        16px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(5,22,38,.85);
+
+    border:
+        1px solid
+        rgba(255,255,255,.14);
+
+    backdrop-filter:
+        blur(16px);
+
+    font-size: 12px;
+
+    opacity: 0;
+
+    transform:
+        translateY(10px);
+
+    transition:
+        .25s;
+
+    pointer-events: none;
+
+}
+
+
+#toast.show {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* CURSOR */
+
+#cursor {
+
+    position: fixed;
+
+    z-index: 100;
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,255,255,.45);
+
+    pointer-events: none;
+
+    transform:
+        translate(-50%,-50%);
+
+}
+
+
+/* ANIMATION */
+
+@keyframes intro {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: none;
+
+    }
+
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+
+    .sidebar {
+
+        width: 70px;
+
+    }
+
+    .sidebar .nav span:not(:first-child),
+    .side-bottom {
+
+        display: none;
+
+    }
+
+    .hero {
+
+        padding: 25px;
+
+    }
+
+    .hero-logo {
+
+        width: 85px;
+
+    }
+
+    .game-info {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+    }
+
+}
+
+
+@media(max-width:600px) {
+
+    .shell {
+
+        padding:
+            55px
+            12px
+            12px;
+
+    }
+
+    .sidebar {
+
+        display: none;
+
+    }
+
+    .game-info {
+
+        padding: 18px;
+
+    }
+
+    .game-art {
+
+        height: 160px;
+
+    }
+
+    .water-word {
+
+        font-size: 40px;
+
+    }
+
+    h1 {
+
+        font-size: 32px;
+
+    }
+
+    .hero {
+
+        min-height: 180px;
+
+    }
+
+    .actions {
+
+        width: 100%;
+
+    }
+
+    .actions button {
+
+        flex: 1;
+
+    }
+
+}
