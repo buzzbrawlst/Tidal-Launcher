@@ -1,0 +1,24 @@
+{
+  "launcher": {
+    "name": "Tidal Launcher",
+    "version": "1.0.0",
+    "logo": "assets/tidal-logo.svg"
+  },
+
+  "game": {
+    "displayName": "OG Fortnite Chapter 2 Season 3",
+    "version": "1.0.0",
+    "executableRelativePath": "FortniteGame/Binaries/Win64/FortniteClient-Win64-Shipping.exe",
+    "launchArguments": ""
+  },
+
+  "downloads": {
+    "manifestUrl": "",
+    "gameBaseUrl": ""
+  },
+
+  "updates": {
+    "versionUrl": "",
+    "downloadUrl": ""
+  }
+}
